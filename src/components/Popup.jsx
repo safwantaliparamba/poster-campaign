@@ -16,6 +16,7 @@ const Popup = ({ onClose, setDetails }) => {
         let file = e.target.files[0];
         let reader = new FileReader();
         let url = reader.readAsDataURL(file);
+        console.log(url);
 
         reader.onloadend = function (e) {
             setImage(reader.result);
