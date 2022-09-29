@@ -87,6 +87,7 @@ const ContentWrapper = styled.div`
     button {
         color: red;
         font-weight: 600;
+        cursor: pointer;
     }
 
     .canvas {
