@@ -8,12 +8,11 @@ const Poster = ({ image, name, onClose }) => {
     const [imagePath, setImagePath] = useState(null);
     useEffect(() => {
         const canvas = document.querySelector(".canvas");
-        canvas.classList.add("block");
+        canvas.classList.add("flex");
         html2canvas(canvas)
             .then((image) => {
-                // console.log(image.toDataURL("image/jpg"));
                 setImagePath(image.toDataURL("image/png"));
-                canvas.classList.remove("block");
+                canvas.classList.remove("flex");
             })
             .catch((error) => {
                 console.log(error);
@@ -69,10 +68,6 @@ const ContentWrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    @media (max-width: 425px) {
-        /* width: 90%; */
-    }
     a {
         display: block;
         background: #0062e6;
@@ -91,23 +86,25 @@ const ContentWrapper = styled.div`
     }
 
     .canvas {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        background-size: 500px !important;
         display: none;
-        width: 50cm;
-        height: 50cm;
-        background-size: 50cm !important;
+        justify-content: center;
+        align-items: center;
 
         img {
             position: absolute;
-            position: absolute;
-            width: 15cm;
+            width: 150px;
             border-radius: 50%;
-            top: 8cm;
-            right: 17.5cm;
-            left: 17.5cm;
+            top: 80px;
+            left: 175px;
+            right: 175px;
             z-index: 100;
         }
-        &.block {
-            display: block;
+        &.flex {
+            display: flex;
         }
     }
 `;

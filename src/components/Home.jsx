@@ -54,6 +54,7 @@ const MainWrapper = styled.div`
     background: #fff;
     border-radius: 15px;
     padding: 20px;
+    margin-bottom: 20px;
 
     @media screen and (max-width: 425px) {
         width: 100%;
